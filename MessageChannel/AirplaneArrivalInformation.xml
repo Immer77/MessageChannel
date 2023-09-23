@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Airplane>
+	<FlightNr>FlightNumber of the airplane</FlightNr>
+	<TimeOfArrival>The arrival time of the airplane in dd-mm-yyyy hh-mm-ss</TimeOfArrival>
+</Airplane>
