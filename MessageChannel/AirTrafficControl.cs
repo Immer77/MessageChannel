@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Messaging;
+﻿using System.Messaging;
 
 
 namespace MessageChannel
@@ -15,7 +11,7 @@ namespace MessageChannel
         public void SendToaToAIC(Airplane airplane)
         {
             MessageQueue AirPlaneEta = new MessageQueue(@".\Private$\airplaneeta");
-            AirPlaneEta.Send(airplane);
+            AirPlaneEta.Send(airplane,"sas");
             return;
         }
     }

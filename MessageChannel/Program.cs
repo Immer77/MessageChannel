@@ -30,9 +30,11 @@ namespace MessageChannel
                 { "sw", SW.AirlineCompanyQueue }
             };
 
+            // Content-based routing
+            //AirlineRouting router = new AirlineRouting(AIC.ETAQueue, airlineQueues);
+            // Message router
+            AirlineRoutingMessage router = new AirlineRoutingMessage(AIC.ETAQueue, airlineQueues);
 
-            AirlineRouting router = new AirlineRouting(AIC.ETAQueue, airlineQueues);
-            
             AIC.Attach(SAS);
             AIC.Attach(KLM);
             AIC.Attach(SW);
