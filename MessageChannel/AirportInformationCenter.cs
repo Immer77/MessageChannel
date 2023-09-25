@@ -11,6 +11,7 @@ namespace MessageChannel
     {
         public MessageQueue ETAQueue = new MessageQueue(@".\Private$\airplaneeta");
         private List<AirlineCompany> airlineCompanies = new List<AirlineCompany>();
+        private List<Message> messages = new List<Message>();
         public AirportInformationCenter() { }
 
         public void ReceiveInfoFromATC()
@@ -22,6 +23,7 @@ namespace MessageChannel
             try
             {
                 Message message = ETAQueue.Receive();
+                messages.Add(message);
                 Airplane airplane = (Airplane)message.Body;
 
                 Console.WriteLine($"Receving information Airplane: {airplane}");

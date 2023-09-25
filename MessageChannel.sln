@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageChannel", "MessageChannel\MessageChannel.csproj", "{9B890F94-5D1D-4922-8D7A-CC3D8F100554}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestRep", "RequestRep\RequestRep.csproj", "{B242990C-5CE1-40F3-B63E-C354BCE7B3B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9B890F94-5D1D-4922-8D7A-CC3D8F100554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B890F94-5D1D-4922-8D7A-CC3D8F100554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B890F94-5D1D-4922-8D7A-CC3D8F100554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B242990C-5CE1-40F3-B63E-C354BCE7B3B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B242990C-5CE1-40F3-B63E-C354BCE7B3B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B242990C-5CE1-40F3-B63E-C354BCE7B3B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B242990C-5CE1-40F3-B63E-C354BCE7B3B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
