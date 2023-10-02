@@ -11,7 +11,7 @@ namespace MessageChannel
         public void SendToaToAIC(Airplane airplane)
         {
             MessageQueue AirPlaneEta = new MessageQueue(@".\Private$\airplaneeta");
-            AirPlaneEta.Send(airplane,"sas");
+            AirPlaneEta.Send(airplane.ToString(),"sas");
             return;
         }
     }

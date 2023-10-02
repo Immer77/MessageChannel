@@ -25,12 +25,12 @@ namespace MessageChannel
         
         public void OnReceiveCompleted(object source, ReceiveCompletedEventArgs asyncResult)
         {
-            MessageQueue request = (MessageQueue)source;
-            Message requestMessage = request.EndReceive(asyncResult.AsyncResult);
+            MessageQueue requestQueue = (MessageQueue)source;
+            Message requestMessage = requestQueue.EndReceive(asyncResult.AsyncResult);
 
             
             string label = requestMessage.Label;
-            MessageQueue replyQueue = requestMessage.ResponseQueue;
+           
             switch (label)
             {
                 case "sas":
@@ -39,6 +39,10 @@ namespace MessageChannel
                     {
                         if (message.Label.Equals("sas"))
                         {
+                            MessageQueue replyQueue = requestMessage.ResponseQueue;
+                            replyQueue.Formatter = new XmlMessageFormatter(new Type[] {typeof(Airplane) });
+                            message.CorrelationId = requestMessage.Id;
+                            
                             replyQueue.Send(message);
                         }
                     }
@@ -55,9 +59,9 @@ namespace MessageChannel
             try
             {
                 Message message = ETAQueue.Receive();
-                Airplane airplane = (Airplane)message.Body;
+                
                 messages.Add(message);
-                Console.WriteLine($"Receving information Airplane: {airplane}");
+                //Console.WriteLine($"Receving information Airplane: {airplane}");
 
                 Console.WriteLine("Forwarding message to Airline company");
                 //NotifyAirlineCompanies(message);

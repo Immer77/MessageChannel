@@ -12,9 +12,9 @@ namespace RequestRep
     {
         static void Main(string[] args)
         {
-            AirlineCompany SAS = new AirlineCompany("sas", "Denmark");
-            AirlineCompany KLM = new AirlineCompany("klm", "Netherlands");
-            AirlineCompany SW = new AirlineCompany("sw", "foobar");
+            AirlineCompany SAS = new AirlineCompany("sas");
+            AirlineCompany KLM = new AirlineCompany("klm");
+            AirlineCompany SW = new AirlineCompany("sw");
 
             Airplane KL1902 = new Airplane("KL1902", DateTime.Now, KLM.Name);
             Airplane SA9812 = new Airplane("SA9812", DateTime.Now, SAS.Name);
@@ -23,7 +23,7 @@ namespace RequestRep
 
             AirportInformationCenter AIC = new AirportInformationCenter();
             AirTrafficControl ATC = new AirTrafficControl();
-            
+            Monitor monitor = new Monitor();
           
             // Sending 
             ATC.SendToaToAIC(SA9812);
